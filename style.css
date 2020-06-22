@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@400;500&display=swap');
 html {
   height: 100%;
 }
@@ -7,6 +8,7 @@ body {
   justify-content: center;
   align-items: center;
   background-image: linear-gradient(to left, rgb(233, 158, 158), rgb(21, 176, 182));
+  font-family: 'Barlow', sans-serif;
 }
 
 .calculator-container {
@@ -16,15 +18,21 @@ body {
   margin: 0 auto;
   border-radius: 10px;
   box-shadow: -11px 13px 12px 10px rgb(0,0,0, 0.19);
-
-  /* border: 2px solid black; */
+  font-weight: bold;
 }
 
 .display {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: end;
   height: 110px;
   border-radius: 10px;
   width: 100%;
   background-color: rgba(252, 252, 252, 0.781);
+}
+
+#numbers {
+  font-size: 60px;
 }
 
 .grid-container {
@@ -51,20 +59,19 @@ body {
   border-radius: 50%;
 }
 
+.grid-item:hover {
+  background-color: rgb(255, 119, 29);
+  color: white;
+  font-size: 30px;
+}
+
 .operator-icon {
   background-color: rgb(91, 177, 184);
   color: white;
   font-weight: bold;
 }
 
-.top-icon {
-  background-color: rgb(55, 185, 120);
-  color: white;
-  font-weight: bold;
-}
-
-.equals-icon {
-  background-color: rgb(64, 209, 136);
-  color: white;
-  font-weight: bold;
+.operator-icon:hover {
+  background-color: rgb(85, 241, 133);
+  /* color: black; */
 }
