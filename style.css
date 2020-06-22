@@ -1,0 +1,19 @@
+html {
+  height: 100%;
+}
+body {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: linear-gradient(to left, rgb(233, 158, 158), rgb(21, 176, 182));
+}
+
+.calculator-container {
+  height: 600px;
+  width: 500px;
+  background: white;
+  margin: 0 auto;
+  border-radius: 4px;
+  box-shadow: 5px 5px rgb(0,0,0, 0.09);
+}
