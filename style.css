@@ -10,10 +10,61 @@ body {
 }
 
 .calculator-container {
-  height: 600px;
-  width: 500px;
+  height: 560px;
+  width: 380px;
   background: white;
   margin: 0 auto;
-  border-radius: 4px;
-  box-shadow: 5px 5px rgb(0,0,0, 0.09);
+  border-radius: 10px;
+  box-shadow: -11px 13px 12px 10px rgb(0,0,0, 0.19);
+
+  /* border: 2px solid black; */
+}
+
+.display {
+  height: 110px;
+  border-radius: 10px;
+  width: 100%;
+  background-color: rgba(252, 252, 252, 0.781);
+}
+
+.grid-container {
+  display: grid;
+  border-radius: 0px 0px 10px 10px;
+  height: 80.3%;
+  width: 100%;
+  grid-template-columns: auto auto auto auto;
+  display: grid;
+  background-color: rgb(71, 88, 90);
+  padding-top: 10px;
+}
+
+.grid-item {
+  margin: 0 auto;
+  width: 80px;
+  height: 80px;
+  background-color: rgb(247, 244, 244);
+  font-size: 20px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+}
+
+.operator-icon {
+  background-color: rgb(91, 177, 184);
+  color: white;
+  font-weight: bold;
+}
+
+.top-icon {
+  background-color: rgb(55, 185, 120);
+  color: white;
+  font-weight: bold;
+}
+
+.equals-icon {
+  background-color: rgb(64, 209, 136);
+  color: white;
+  font-weight: bold;
 }
