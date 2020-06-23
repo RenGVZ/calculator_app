@@ -23,16 +23,32 @@ body {
 
 .display {
   display: flex;
-  flex-direction: row-reverse;
-  justify-content: end;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: space-around;
   height: 110px;
   border-radius: 10px;
   width: 100%;
+  grid-column: 1 / -1;
   background-color: rgba(252, 252, 252, 0.781);
+  word-wrap: break-word;
+  word-break: break-all;
 }
 
-#numbers {
-  font-size: 60px;
+#previous-num {
+  /* font-size: 30px; */
+  /* margin-block-start: 6px;
+  margin-inline-start: -49px; */
+  font-size: 1.5rem;
+  margin-bottom: 0;
+  margin-top: 0;
+}
+
+#current-num {
+  font-size: 2.5rem;
+  margin-top: 0;
+  margin-bottom: 0;
+  line-height: 2rem;
 }
 
 .grid-container {
@@ -57,6 +73,7 @@ body {
   justify-content: center;
   align-items: center;
   border-radius: 50%;
+  border: none;
 }
 
 .grid-item:hover {
@@ -65,13 +82,24 @@ body {
   font-size: 30px;
 }
 
+.grid-item:focus {
+ outline: none; 
+}
+
 .operator-icon {
   background-color: rgb(91, 177, 184);
   color: white;
   font-weight: bold;
+  border: none;
 }
 
 .operator-icon:hover {
   background-color: rgb(85, 241, 133);
   /* color: black; */
+}
+
+#equals {
+  grid-column: span 2;
+  width: 166px;
+  border-radius: 44px;
 }

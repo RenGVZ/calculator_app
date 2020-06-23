@@ -9,30 +9,31 @@
 <body>
   <div class="calculator-container">
     <div class="display">
-      <h1 id="numbers"></h1>
+      <div data-previous id="previous-num"></div>
+      <div data-current id="current-num"></div>
     </div>
 
     <div class="grid-container">
-      <div class="grid-item operator-icon">AC</div>
-      <div class="grid-item operator-icon">Del</div>
-      <div class="grid-item operator-icon">%</div>
-      <div class="grid-item operator-icon">/</div>
-      <div class="grid-item">7</div>
-      <div class="grid-item">8</div>
-      <div class="grid-item">9</div>
-      <div class="grid-item operator-icon">X</div>
-      <div class="grid-item">4</div>
-      <div class="grid-item">5</div>
-      <div class="grid-item">6</div>
-      <div class="grid-item operator-icon">-</div>
-      <div class="grid-item">1</div>
-      <div class="grid-item">2</div>
-      <div class="grid-item">3</div>
-      <div class="grid-item operator-icon">+</div>
-      <div class="grid-item">0</div>
-      <div class="grid-item">.</div>
-      <div class="grid-item">+/-</div>
-      <div class="grid-item operator-icon">=</div>
+      <button data-all-clear class="grid-item operator-icon">AC</button>
+      <button data-delete class="grid-item operator-icon">Del</button>
+      <button data-operation class="grid-item operator-icon">%</button>
+      <button data-operation class="grid-item operator-icon">/</button>
+      <button data-number class="grid-item">7</button>
+      <button data-number class="grid-item">8</button>
+      <button data-number class="grid-item">9</button>
+      <button data-operation class="grid-item operator-icon">X</button>
+      <button data-number class="grid-item">4</button>
+      <button data-number class="grid-item">5</button>
+      <button data-number class="grid-item">6</button>
+      <button data-operation class="grid-item operator-icon">-</button>
+      <button data-number class="grid-item">1</button>
+      <button data-number class="grid-item">2</button>
+      <button data-number class="grid-item">3</button>
+      <button data-operation class="grid-item operator-icon">+</button>
+      <button data-number class="grid-item">0</button>
+      <button data-number class="grid-item">.</button>
+      <!-- <button class="grid-item">+/-</button> -->
+      <button data-equals class="grid-item operator-icon" id="equals">=</button>
     </div>
   </div>
   
