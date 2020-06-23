@@ -12,7 +12,7 @@ class Calculator {
   }
 
   delete() {
-
+    this.currentOperand = this.currentOperand.toString().slice(0, -1)
   }
 
   appendNumber(number) {
@@ -21,19 +21,39 @@ class Calculator {
   }
 
   chooseOperation(operation) {
-    console.log(operation)
-    if (this.currentOperand === '') return;
+    if (this.currentOperand === '') return
     if (this.previousOperand !== '') {
-      this.compute(this.previousOperand, this.currentOperand, operation)
+      this.compute()
     }
     this.operation = operation;
     this.previousOperand = this.currentOperand;
     this.currentOperand = '';
   }
 
-  compute(previousOperand, currentOperand, operation) {
-    console.log(`${previousOperand}, ${currentOperand}, ${operation}`)
-    
+  compute() {
+    let computation
+    const prev = parseFloat(this.previousOperand);
+    const current = parseFloat(this.currentOperand);
+    if (isNaN(prev) || isNaN(current)) return
+    switch (this.operation) {
+      case '+': 
+        computation = prev + current
+        break
+      case '-':
+        computation = prev - current
+        break
+      case 'X': 
+        computation = prev * current
+        break
+      case '/': 
+        computation = prev / current
+        break
+      default:
+        return
+    }
+    this.currentOperand = computation;
+    this.operation = undefined;
+    this.previousOperand = '';
   }
 
   updateDisplay() {
@@ -64,17 +84,26 @@ numberButtons.forEach(button => {
 
 operationButtons.forEach(operation => {
   operation.addEventListener('click', () => {
-    // let operation = operation.innerText;
-    calculator.chooseOperation();
+    calculator.chooseOperation(operation.innerText);
     calculator.updateDisplay();
     
   })
+})
+
+equals.addEventListener('click', button => {
+  calculator.compute();
+  calculator.updateDisplay();
 })
 
 allClear.addEventListener('click', button => {
   calculator.clearAll();
   calculator.updateDisplay();
 });
+
+deleteNum.addEventListener('click', button => {
+  calculator.delete();
+  calculator.updateDisplay();
+})
 
 
 // numberbuttons.forEach(item => {
