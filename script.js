@@ -7,7 +7,7 @@ class Calculator {
 
   clearAll() {
     this.currentOperand = '';
-    this.previousOperand = '';
+    this.previousOperandTextElement.innerText = '';
     this.operation = undefined;
   }
 
@@ -42,10 +42,10 @@ class Calculator {
       case '-':
         computation = prev - current
         break
-      case 'X': 
+      case 'x': 
         computation = prev * current
         break
-      case '/': 
+      case '÷': 
         computation = prev / current
         break
       default:
@@ -56,12 +56,19 @@ class Calculator {
     this.previousOperand = '';
   }
 
+  getDisplayNumber(number) {
+    const floatNumber = parseFloat(number);
+    if (isNaN(floatNumber)) return '';
+    return floatNumber.toLocaleString('en');
+    // return number;
+  }
+
   updateDisplay() {
-    this.currentOperandTextElement.innerText = this.currentOperand;
-    // this.previousOperandTextElement.innerText = this.previousOperand;
+    this.currentOperandTextElement.innerText = 
+      this.getDisplayNumber(this.currentOperand);
     if (this.operation != null) {
       this.previousOperandTextElement.innerText = 
-        `${this.previousOperand} ${this.operation}`
+        `${this.getDisplayNumber(this.previousOperand)} ${this.operation}`
     }
   }
 }
